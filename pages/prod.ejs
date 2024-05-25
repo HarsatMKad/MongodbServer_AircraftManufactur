@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body style="background-color: #AFEEEE ">
+  <form action="/" method="get">
+    <input type="submit" value="Back">
+  </form>
+
+  <% for (let i = 0; i < data.length; i++) { %>
+  <hr>
+  <h2><%= data[i].name %></h2>
+  <h4><%= data[i].type %></h4>
+  <h4><%= data[i].specific_type %></h4>
+
+  <% if (data[i].creation_date != null) { %>
+  <h4>Created at:</h4>
+  <h4><%= data[i].creation_date %></h4>
+  <% } else { %>
+  <h4>In process</h4>
+  <% } %>
+
+  <select class="selectpicker" data-style="btn-info" name="selectpicker">
+    <option>Works</option>
+      <% for (let j = 0; j < data[i].works_list.length; j++) { %>
+      <option><%= data[i].works_list[j].work_name %></option>
+      <% } %>
+    </option>
+  </select>
+
+  <select class="selectpicker" data-style="btn-info" name="selectpicker">
+    <option>Tests</option>
+      <% for (let j = 0; j < data[i].tests_list.length; j++) { %>
+      <option><%= data[i].tests_list[j].test_name %></option>
+      <% } %>
+    </option>
+  </select>
+  <hr>
+  <% } %>
+</body>
+</html>

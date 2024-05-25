@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body style="background-color: #AFEEEE ">
+  <form action="/" method="get">
+    <input type="submit" value="Back">
+  </form>
+
+  <% for (let i = 0; i < data.length; i++) { %>
+  <hr>
+  <h2><%= data[i].emp.lastname %></h2>
+  <h4><%= data[i].emp.name %></h4>
+  <h4><%= data[i].type %></h4>
+  <h4> work at <%= data[i].brigade.area.workshop.number %> workshop in <%= data[i].brigade.area.number %> area</h4>
+  <hr>
+  <% } %>
+
+</body>
+</html>
